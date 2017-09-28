@@ -1,0 +1,21 @@
+.loader {
+  color: #eee;
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation-name: blink;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(.55, .085, .68, .53);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  text-align: center;
+}
+
+@keyframes blink {
+  from {
+    opacity: .25;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
