@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 
+import recipes from '../recipes'
+
 import Header from '../components/header'
 import Loader from '../components/loader'
+import RecipesList from '../components/recipes-list'
 
 class App extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      isFetching: false
+      isFetching: false,
+      recipes
     }
   }
 
@@ -18,6 +22,8 @@ class App extends Component {
         <Header />
 
         { this.state.isFetching && <Loader /> }
+
+        <RecipesList recipes={ this.state.recipes } />
       </div>
     )
   }
