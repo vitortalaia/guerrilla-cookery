@@ -1,0 +1,25 @@
+.header__title {
+  color: #fff;
+  font-family: "Guerrilla";
+  font-size: 4.5rem;
+  text-align: center;
+  text-shadow: 2px 5px #010c14;
+}
+
+.header__instructions {
+  color: #fefefe;
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header__searchbar {
+  padding: .625rem;
+  width: 100%;
+  color: #55b0f2;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  appearance: none;
+}
