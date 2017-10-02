@@ -7,7 +7,7 @@ import '../styles/components/recipes-list.css'
 const renderRecipes = (recipes) => {
   return recipes.map((recipe) => {
     return (
-      <li key={ recipe.id }>
+      <li key={ recipe.href }>
         <a href={ recipe.href }>
           <Recipe { ...recipe } />
         </a>

@@ -7,6 +7,7 @@ const Recipe = (props) => {
   return (
     <div className="recipe">
       <img
+        alt={ props.title }
         className="recipe__image"
         src={ props.thumbnail || defaultImage }
         width="80"

@@ -12,7 +12,10 @@ const Header = (props) => {
           Type the ingredients separated by comma on the box below
         </p>
 
-        <input type="text" className="header__searchbar" />
+        <input
+          type="text"
+          className="header__searchbar"
+          onKeyPress={ props.onSearchRecipes } />
       </div>
     </header>
   )
