@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-import recipes from '../recipes'
-
 import Header from '../components/header'
 import Loader from '../components/loader'
 import RecipesList from '../components/recipes-list'
@@ -12,7 +10,7 @@ class App extends Component {
 
     this.state = {
       isFetching: false,
-      recipes
+      recipes: []
     }
   }
 
