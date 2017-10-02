@@ -8,7 +8,9 @@ const renderRecipes = (recipes) => {
   return recipes.map((recipe) => {
     return (
       <li key={ recipe.id }>
-        <Recipe { ...recipe } />
+        <a href={ recipe.href }>
+          <Recipe { ...recipe } />
+        </a>
       </li>
     )
   })
