@@ -5,15 +5,26 @@ with the ingredients that you have.
 
 ## Installation
 
-TODO: Write installation instructions here
+Since this application was built using [create-react-app](https://github.com/facebookincubator/create-react-app),
+you'll need to use Node >= 6 in order to run it.
+
+All you need to do is to clone this repo and install the dependencies:
+
+```shell
+git clone git@github.com:vitortalaia/guerrilla-cookery.git
+
+npm install
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+To start the local server, simply run the following command:
 
-## Development
+```shell
+npm start
+```
 
-TODO: Write development instructions here
+You can now access the application on [localhost:3000](http://localhost:3000)
 
 ## Contributing
 
