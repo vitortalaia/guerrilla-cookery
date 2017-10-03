@@ -19,7 +19,7 @@ const Header = (props) => {
           className="header__searchbar"
           onKeyPress={
             (event) => {
-              if (event.charCode === ENTER_CHAR_CODE) {
+              if (event.charCode === ENTER_CHAR_CODE && event.target.value) {
                 props.onSearchRecipes(event.target.value)
               }
             }

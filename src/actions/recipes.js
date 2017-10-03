@@ -1,3 +1,4 @@
+import * as types from './types'
 import { displayLoader, hideLoader } from './loader'
 
 import API from '../api'
@@ -10,7 +11,7 @@ export const searchRecipes = (ingredients) => {
 
     API.get('/', { params })
       .then((response) => {
-        console.log(response.data.results)
+        dispatch(setRecipes(response.data.results))
       })
       .catch((err) => {
         console.error(err)
@@ -19,5 +20,12 @@ export const searchRecipes = (ingredients) => {
       .then(() => {
         dispatch(hideLoader())
       })
+  }
+}
+
+export const setRecipes = (recipes) => {
+  return {
+    type: types.SET_RECIPES,
+    recipes
   }
 }

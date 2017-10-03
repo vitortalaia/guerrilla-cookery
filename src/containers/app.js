@@ -7,6 +7,7 @@ import { searchRecipes } from '../actions/recipes'
 
 import Header from '../components/header'
 import Loader from '../components/loader'
+import RecipesList from '../components/recipes-list'
 
 const actionCreators = {
   displayLoader,
@@ -16,11 +17,18 @@ const actionCreators = {
 
 class App extends Component {
   render() {
+    const { props } = this
+
     return (
       <div className="container">
-        <Header onSearchRecipes={ this.props.searchRecipes } />
+        <Header onSearchRecipes={ props.searchRecipes } />
 
-        { this.props.isFetching && <Loader /> }
+        { props.isFetching && <Loader /> }
+
+        {
+          !!props.recipes.length &&
+          <RecipesList recipes={ props.recipes } />
+        }
       </div>
     )
   }
@@ -28,7 +36,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isFetching: state.loader
+    isFetching: state.loader,
+    recipes: state.recipes
   }
 }
 
