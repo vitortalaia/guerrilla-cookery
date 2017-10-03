@@ -1,2 +1,3 @@
 export const DISPLAY_LOADER = 'DISPLAY_LOADER'
 export const HIDE_LOADER = 'HIDE_LOADER'
+export const SEARCH_RECIPES = 'SEARCH_RECIPES'

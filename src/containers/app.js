@@ -3,20 +3,22 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import { displayLoader, hideLoader } from '../actions/loader'
+import { searchRecipes } from '../actions/recipes'
 
 import Header from '../components/header'
 import Loader from '../components/loader'
 
 const actionCreators = {
   displayLoader,
-  hideLoader
+  hideLoader,
+  searchRecipes
 }
 
 class App extends Component {
   render() {
     return (
       <div className="container">
-        <Header />
+        <Header onSearchRecipes={ this.props.searchRecipes } />
 
         { this.props.isFetching && <Loader /> }
       </div>

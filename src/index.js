@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { createLogger } from 'redux-logger'
+import thunk from 'redux-thunk'
 
 import registerServiceWorker from './register-service-worker'
 
@@ -13,8 +14,14 @@ import './styles/font.css'
 import './styles/base.css'
 
 const logger = createLogger()
+const enhancer = compose(
+  applyMiddleware(
+    logger,
+    thunk
+  )
+)
 
-const store = createStore(reducers, applyMiddleware(logger))
+const store = createStore(reducers, {}, enhancer)
 
 ReactDOM.render(
   <Provider store={ store }>

@@ -2,6 +2,8 @@ import React from 'react'
 
 import '../styles/components/header.css'
 
+const ENTER_CHAR_CODE = 13
+
 const Header = (props) => {
   return (
     <header className="header">
@@ -15,7 +17,14 @@ const Header = (props) => {
         <input
           type="text"
           className="header__searchbar"
-          onKeyPress={ props.onSearchRecipes } />
+          onKeyPress={
+            (event) => {
+              if (event.charCode === ENTER_CHAR_CODE) {
+                props.onSearchRecipes(event.target.value)
+              }
+            }
+          }
+        />
       </div>
     </header>
   )
